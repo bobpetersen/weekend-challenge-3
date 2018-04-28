@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const databaseUrl = 'mongodb://localhost:27017/to_do';
+const databaseUrl = 'mongodb://localhost:27017/todo-route';
 
 mongoose.connect(databaseUrl);
 

@@ -1,3 +1,41 @@
+Weekend Challenge 3 / To Do App
+
+[X] Create all folders and files.
+    [X] HTML        [x] modules     [x] public      [x] vendors
+    [X] Server      [x] models      [x] scripts
+    [X] Client      [x] routes      [x] styles
+[ ] Connect - HTML - Client - Server - Database 
+
+//----------FRONT END------------\\
+[ ] submit button
+[ ] delete button
+[ ] input field for task
+[ ] table for list of tasks
+
+<-------CLIENT-------->
+[ ] app controller
+    [ ] GET
+    [ ] POST
+    [ ] PUT
+    [ ] DELETE
+
+<---------CSS---------->    
+[ ] bootstrap
+[ ] make pretty
+
+//-------------SERVER-------------\\
+[ ] route
+    [ ] GET
+    [ ] POST
+    [ ] PUT
+    [ ] DELETE
+
+//------------DATABASE-------------\\
+[ ] create in mongoose
+[ ] schima
+[ ] mongo db
+[ ] create todo in db to test GET connection
+
 Here are the specific components for the challenge:
 
 Using AngularJS, create a front end experience that allows a user to create a task.

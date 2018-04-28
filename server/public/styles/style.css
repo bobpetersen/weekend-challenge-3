@@ -1,0 +1,14 @@
+header {
+    background-color: aqua;
+    padding: .5em;
+    margin-bottom: 2em;
+    text-align: center;
+}
+section {
+    margin-bottom: 1.5em;
+}
+
+main {
+    width: 90%;
+    margin: auto;
+}
