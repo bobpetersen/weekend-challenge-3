@@ -28,5 +28,17 @@ app.controller('TodoController', ['$http',function ($http) {
             console.log('error on POST ', error.status);
         })
     }//end createKoala
+    self.deleteTodo = function (todoToDelete) {
+        $http({
+            method: 'DELETE',
+            url: '/todo-route',
+            params: todoToDelete
+        }).then(function successCallback(response) {
+            console.log('success on DELETE ', response.status);
+            self.displayArray();
+        }).catch(function (error) {
+            console.log('error on DELETE ', error.status);
+        })
+    }//end createKoala
     self.displayArray();
 }]) // end controller
