@@ -4,7 +4,7 @@ var app = angular.module('TodoApp', []);
 
 app.controller('TodoController', ['$http',function ($http) {
     var self = this;
-    self.newTodo = {};
+    self.newTodo = {completed: false };
 
     self.displayArray = function() {
         $http({
@@ -22,22 +22,36 @@ app.controller('TodoController', ['$http',function ($http) {
             url: '/todo-route',
             data: self.newTodo
         }).then(function successCallback(response) {
-            console.log('success on POST ', response.status);
+            console.log('success on POST ', response);
+            self.newTodo = {completed: false};
             self.displayArray();
         }).catch(function (error) {
-            console.log('error on POST ', error.status);
+            console.log('error on POST ', error);
         })
-    }//end createKoala
+    }//end createTodo
     self.deleteTodo = function (todoToDelete) {
         $http({
             method: 'DELETE',
             url: '/todo-route',
             params: todoToDelete
         }).then(function successCallback(response) {
-            console.log('success on DELETE ', response.status);
+            console.log('success on DELETE ', response);
             self.displayArray();
         }).catch(function (error) {
-            console.log('error on DELETE ', error.status);
+            console.log('error on DELETE ', error);
+        })
+    }//end deleteTodo
+    self.completeTodo = function (todoToComplete) {
+        todoToComplete.completed = true;
+        $http({
+            method: 'PUT',
+            url: '/todo-route',
+            data: todoToComplete
+        }).then(function successCallback(response) {
+            console.log('success on COMPLETE ', response);
+            self.displayArray();
+        }).catch(function (error) {
+            console.log('error on COMPLETE ', error);
         })
     }//end createKoala
     self.displayArray();

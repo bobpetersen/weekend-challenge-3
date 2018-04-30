@@ -64,6 +64,7 @@ app.put('/todo-route', (req, res) => {
     });
 });
 
+
 app.use(express.static('server/public'));
 
 app.listen(PORT, () => {

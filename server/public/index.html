@@ -14,42 +14,42 @@
     <title>Weekend Challenge 3</title>
 </head>
 
-        <header>
-            <h1>Shit My Wife is Making Me Do</h1>
-        </header>
+<header>
+    <h1>Crap My Wife is Making Me Do</h1>
+</header>
+
 <body ng-app="TodoApp">
     <main class="container" ng-controller='TodoController as vm'>
         <section>
             <div class="container">
                 <h3>What's She Want Now?</h3>
-                <form ng-submit="vm.createTodo()">
-                    <input type="text" placeholder="Put Bullshit Here" ng-model="vm.newTodo.name" />
-                    <button> +  Add Bullshit</button>
-                </form>
-            </div>
+                <div class="input-group mb-3" ng-model="vm.newTodo.name">
+                    <input type="text" class="form-control" placeholder="Put Crap Here" ng-model="vm.newTodo.name">
+                    <div class="input-group-append" ng-submit="vm.createTodo()">
+                        <button class="btn btn-outline-secondary" ng-click="vm.createTodo(todo)">Add Bullshit</button>
+                    </div>
+                </div>
         </section>
         <section>
             <div class="container">
-            <table class="table table-sm table-striped">
-                <thead>
-                    <tr>
-                        <th scope="col">Pile of Bullshit</th>
-                        <th scope="col">Completed</th>
-                        <th scope="col">Delete</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr ng-repeat="todo in vm.todoArray">
-                        <td ng-model="todo.name">{{ todo.name }}</td>
-                        <td><button ng-click="vm.Completetodo(todo)">Beer Me!</button></td>
-                        <td><button ng-click="vm.deleteTodo(todo)">Fuck It!</button></td>
-                    </tr>
-                </tbody>
-            </table>
+                <p scope="col">Look At All This Crap!</p>
+                <div ng-repeat="todo in vm.todoArray" class="input-group">
+                    <input type="text" class="form-control" ng-class="{ 'completed': todo.completed == true, 'uncompleted': todo.completed == false }"
+                        ng-model="todo.name">
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-secondary" type="button" ng-click="vm.completeTodo(todo)">Beer Me!</button>
+                        <button class="btn btn-outline-secondary" type="button" ng-click="vm.deleteTodo(todo)">Fuck It!</button>
+                    </div>
+                </div>
             </div>
         </section>
-
     </main>
+    <footer>
+        <p>&copy; Trailer Park Project</p>
+        <br>
+        <p>Disclaimer: The opinions in this app in no way represent my wife (she made me put this in).Avoid alcoholic beverages while using this product. Avoid contact with eyes and food. Avoid contact with eyes and skin and
+        avoid inhaling fumes. Avoid contact with mucous membranes.</p>
+    </footer>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
