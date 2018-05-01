@@ -2,9 +2,15 @@ console.log('js');
 
 var app = angular.module('TodoApp', []);
 
-app.controller('TodoController', ['$http',function ($http) {
+app.controller('TodoController', ['$http',function ($http) { // could use ($scope)
     var self = this;
-    self.newTodo = {completed: false };
+    self.newTodo = {completed: false }; 
+    // add self.message = "hello";    put message on html to test {{message}}
+    // $scope.message = 'hi with scope';
+
+    //  self.toggleCompleteness(theTask) {
+    //    theTask.complete = !theTask.complete
+    //  }
 
     self.displayArray = function() {
         $http({
@@ -17,10 +23,10 @@ app.controller('TodoController', ['$http',function ($http) {
         })
     } //end display array
     self.createTodo = function () {
-        $http({
+        $http({         // small step would be to add console log here first ('new task', self.createTodo)
             method: 'POST',
             url: '/todo-route',
-            data: self.newTodo
+            data: self.newTodo,
         }).then(function successCallback(response) {
             console.log('success on POST ', response);
             self.newTodo = {completed: false};
@@ -33,7 +39,7 @@ app.controller('TodoController', ['$http',function ($http) {
         $http({
             method: 'DELETE',
             url: '/todo-route',
-            params: todoToDelete
+            params: todoToDelete,
         }).then(function successCallback(response) {
             console.log('success on DELETE ', response);
             self.displayArray();
@@ -46,7 +52,7 @@ app.controller('TodoController', ['$http',function ($http) {
         $http({
             method: 'PUT',
             url: '/todo-route',
-            data: todoToComplete
+            data: todoToComplete,
         }).then(function successCallback(response) {
             console.log('success on COMPLETE ', response);
             self.displayArray();

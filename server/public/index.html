@@ -26,7 +26,8 @@
                 <div class="input-group mb-3" ng-model="vm.newTodo.name">
                     <input type="text" class="form-control" placeholder="Put Crap Here" ng-model="vm.newTodo.name">
                     <div class="input-group-append" ng-submit="vm.createTodo()">
-                        <button class="btn btn-outline-secondary" ng-click="vm.createTodo(todo)">Add Bullshit</button>
+                        <button class="btn btn-outline-primary" ng-click="vm.createTodo(todo)">Add Bullshit</button>
+                        <!-- <input type="date"> -->
                     </div>
                 </div>
         </section>
@@ -37,8 +38,8 @@
                     <input type="text" class="form-control" ng-class="{ 'completed': todo.completed == true, 'uncompleted': todo.completed == false }"
                         ng-model="todo.name">
                     <div class="input-group-append">
-                        <button class="btn btn-outline-secondary" type="button" ng-click="vm.completeTodo(todo)">Beer Me!</button>
-                        <button class="btn btn-outline-secondary" type="button" ng-click="vm.deleteTodo(todo)">Fuck It!</button>
+                        <button class="btn btn-outline-success" type="button" ng-click="vm.completeTodo(todo)">Beer Me!</button>
+                        <button class="btn btn-outline-danger" type="button" ng-click="vm.deleteTodo(todo)">Fuck It!</button>
                     </div>
                 </div>
             </div>
@@ -47,10 +48,10 @@
     <footer>
         <p>&copy; Trailer Park Project</p>
         <br>
-        <p>Disclaimer: The opinions in this app in no way represent my wife (she made me put this in).Avoid alcoholic beverages while using this product. Avoid contact with eyes and food. Avoid contact with eyes and skin and
-        avoid inhaling fumes. Avoid contact with mucous membranes.</p>
+        <p>Disclaimer: The opinions in this app in no way represent my wife (she made me put this in).Avoid alcoholic beverages
+            while using this product. Avoid contact with eyes and food. Avoid contact with eyes and skin and avoid inhaling
+            fumes. Avoid contact with mucous membranes.</p>
     </footer>
-
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"

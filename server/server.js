@@ -1,21 +1,25 @@
-const express = require('express');
+const express = require('express'); 
 const app = express();
 const bodyParser = require('body-parser');
 const PORT = process.env.PORT || 5000;
+//mongoose connection
 require('./modules/todoDatabase.js');
+
 const todoRouter = require('./routes/todo-route.js');
 
 // Configure body-parser for Angular and jQuery
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json()); // This line is required for Angular
 
+//app.use('/todo-route', todoRouter); alternate syntax
+
 const Todo = require('./models/todo.schema');
 const todoData = require('./modules/todoDatabase');
 
 app.post('/todo-route', (req, res) => {
   const todoToAdd = req.body;
-  console.log(todoToAdd);
-  Todo.create(todoToAdd)
+  console.log(todoToAdd);  // alt (req.body)
+  Todo.create(todoToAdd)  // alt Todo.create(req.body)
     .then(() => {
       res.sendStatus(200);
     })
@@ -64,7 +68,7 @@ app.put('/todo-route', (req, res) => {
     });
 });
 
-
+// server static files
 app.use(express.static('server/public'));
 
 app.listen(PORT, () => {

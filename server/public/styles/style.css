@@ -16,7 +16,7 @@ main {
 }
 
 .completed {
-    background-color: #ffcc00;
+    background-image: url('/images/beer.jpg');
     color: black;
 }
 
